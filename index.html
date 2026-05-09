@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,7 +16,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -28,10 +27,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
-
-    button, input {
-      font: inherit;
-    }
+    button, input, select { font: inherit; }
 
     button {
       border: 1px solid var(--ink);
@@ -64,7 +60,6 @@
       gap: 24px;
       border-bottom: 1px solid var(--line-strong);
       padding-bottom: 22px;
-      margin-bottom: 0;
     }
 
     .logo {
@@ -144,9 +139,7 @@
       margin: 0;
     }
 
-    .hero p {
-      max-width: 760px;
-    }
+    .hero p { max-width: 760px; }
 
     .actions {
       display: flex;
@@ -184,18 +177,14 @@
       margin-bottom: 18px;
     }
 
-    .filters-top h3 {
-      margin: 0;
-    }
+    .filters-top h3 { margin: 0; }
 
     #clearFilters {
       font-size: 11px;
       padding: 7px 10px;
     }
 
-    .search-row {
-      margin: 20px 0;
-    }
+    .search-row { margin: 20px 0; }
 
     label {
       display: block;
@@ -206,7 +195,7 @@
       margin-bottom: 8px;
     }
 
-    input {
+    input, select {
       width: 100%;
       padding: 14px;
       border: 1px solid var(--line);
@@ -214,9 +203,7 @@
       color: #fff;
     }
 
-    input::placeholder {
-      color: #777;
-    }
+    input::placeholder { color: #777; }
 
     .filter-group {
       border-top: 1px solid var(--line);
@@ -277,6 +264,7 @@
       color: #fff;
     }
 
+    .cover-wrap,
     .cover-placeholder {
       width: 100%;
       aspect-ratio: 3 / 4;
@@ -285,9 +273,17 @@
       display: grid;
       place-items: center;
       margin-bottom: 18px;
+      overflow: hidden;
       font-size: clamp(46px, 7vw, 64px);
       font-weight: 900;
       letter-spacing: -.08em;
+    }
+
+    .cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .book-card h3 {
@@ -297,7 +293,7 @@
       letter-spacing: -.05em;
     }
 
-    .book-meta {
+    .book-card p {
       color: #888;
       font-size: 14px;
       margin-bottom: 10px;
@@ -325,229 +321,167 @@
       font-size: 14px;
     }
 
-    @media (max-width: 1100px) {
-      .book-grid {
-        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      }
+    dialog {
+      border: 1px solid #fff;
+      background: #050505;
+      color: #fff;
+      padding: 0;
+      width: min(1180px, calc(100vw - 32px));
+    }
 
-      .archive-layout {
-        grid-template-columns: 280px 1fr;
-      }
+    dialog::backdrop {
+      background: rgba(0,0,0,.8);
+    }
 
-      h1 {
-        font-size: clamp(54px, 12vw, 128px);
-      }
+    .close-dialog {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      z-index: 5;
+    }
+
+    .book-detail,
+    .compare-content {
+      padding: 28px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) 1fr;
+      gap: 32px;
+    }
+
+    .detail-cover img,
+    .detail-cover .cover-placeholder {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+
+    .detail-info h2 {
+      margin-bottom: 16px;
+    }
+
+    .detail-meta {
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .detail-actions {
+      display: flex;
+      gap: 10px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    .detail-context {
+      color: #d0d0d0;
+    }
+
+    .reader-dialog {
+      width: 100vw;
+      height: 100vh;
+      max-width: none;
+      border: 0;
+    }
+
+    .reader-topbar {
+      height: 64px;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      gap: 16px;
+    }
+
+    .reader-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    #pdfFrame {
+      width: 100%;
+      height: calc(100vh - 64px);
+      border: 0;
+      background: #111;
+    }
+
+    .compare-selectors {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .compare-view {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .compare-card {
+      border: 1px solid #333;
+      padding: 16px;
+      background: #0b0b0b;
+    }
+
+    .compare-card img,
+    .compare-card .cover-placeholder {
+      width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      background: #111;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 10px;
+      border-top: 1px solid #333;
+      padding-top: 8px;
+      margin-top: 8px;
+      color: #bbb;
+    }
+
+    .compare-row strong {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 11px;
     }
 
     @media (max-width: 860px) {
-      .page {
-        padding: 20px;
-      }
-
-      header {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      nav,
-      .langs {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        min-height: calc(100vh - 160px);
-        padding-bottom: 48px;
-      }
-
-      h1 {
-        font-size: clamp(52px, 16vw, 92px);
-        line-height: .84;
-      }
-
-      h2 {
-        font-size: clamp(42px, 12vw, 74px);
-      }
-
-      .archive-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .filters {
-        position: static;
-      }
-
-      .archive-head {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .book-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .book-card {
-        min-height: auto;
-        padding: 12px;
-      }
-
-      .book-card h3 {
-        font-size: 18px;
-      }
-
-      .book-meta {
-        font-size: 12px;
-      }
-
-      .tag {
-        font-size: 9px;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-      }
+      .page { padding: 20px; }
+      header { display: grid; grid-template-columns: 1fr; }
+      nav, .langs { justify-content: flex-start; }
+      .archive-layout { grid-template-columns: 1fr; }
+      .filters { position: static; }
+      .archive-head { align-items: flex-start; flex-direction: column; }
+      .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .about, .detail-grid, .compare-view, .compare-selectors { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 520px) {
-      .page {
-        padding: 16px;
-      }
-
-      header {
-        padding-bottom: 18px;
-      }
-
-      .logo {
-        font-size: 31px;
-      }
-
-      nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-      }
-
-      nav button {
-        width: 100%;
-      }
-
-      .langs {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
-      }
-
-      .langs button {
-        width: 100%;
-      }
-
-      .hero {
-        min-height: calc(100vh - 190px);
-        padding-bottom: 42px;
-      }
-
-      .eyebrow {
-        font-size: 11px;
-        margin-bottom: 16px;
-      }
-
-      h1 {
-        font-size: clamp(48px, 18vw, 76px);
-        letter-spacing: -0.095em;
-      }
-
-      p {
-        font-size: 17px;
-      }
-
-      .actions {
-        display: grid;
-        grid-template-columns: 1fr;
-        width: 100%;
-      }
-
-      .actions button {
-        width: 100%;
-      }
-
-      section {
-        padding: 44px 0;
-      }
-
-      .filters {
-        padding: 14px;
-      }
-
-      .filter-options {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 4px;
-      }
-
-      .filter-chip {
-        flex: 0 0 auto;
-      }
-
-      .book-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .book-card {
-        display: grid;
-        grid-template-columns: 112px 1fr;
-        gap: 14px;
-        align-items: stretch;
-      }
-
-      .book-card > div:first-child {
-        display: grid;
-        grid-template-columns: 112px 1fr;
-        gap: 14px;
-      }
-
-      .cover-placeholder {
-        width: 112px;
-        height: 150px;
-        margin-bottom: 0;
-        font-size: 36px;
-      }
-
-      .book-card h3 {
-        font-size: 20px;
-      }
-
-      .book-card > div:last-child {
-        grid-column: 1 / -1;
-      }
-
-      footer {
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      h1 {
-        font-size: 44px;
-      }
-
-      .book-card,
-      .book-card > div:first-child {
-        grid-template-columns: 92px 1fr;
-      }
-
-      .cover-placeholder {
-        width: 92px;
-        height: 124px;
-        font-size: 30px;
-      }
+      .page { padding: 16px; }
+      .logo { font-size: 31px; }
+      nav { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+      nav button { width: 100%; }
+      .langs { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+      .langs button { width: 100%; }
+      h1 { font-size: clamp(48px, 18vw, 76px); }
+      p { font-size: 17px; }
+      .actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+      .actions button { width: 100%; }
+      section { padding: 44px 0; }
+      .book-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-
   <div class="page">
-
     <header>
       <a class="logo" href="#">
         BAUHAUS<br />
@@ -556,194 +490,139 @@
 
       <div>
         <nav>
-          <button onclick="document.querySelector('#archive').scrollIntoView()">Archive</button>
-          <button onclick="document.querySelector('#about').scrollIntoView()">About</button>
+          <button data-scroll="#archive" data-i18n="nav.archive">Archive</button>
+          <button data-scroll="#about" data-i18n="nav.about">About</button>
         </nav>
 
         <div class="langs">
-          <button>EN</button>
-          <button>PT-BR</button>
-          <button>ES</button>
+          <button class="lang active" data-lang="en">EN</button>
+          <button class="lang" data-lang="pt">PT-BR</button>
+          <button class="lang" data-lang="es">ES</button>
         </div>
       </div>
     </header>
 
     <main>
-
       <section class="hero">
         <div class="eyebrow">
           BAUHAUSBÜCHER / 1925–1930
         </div>
 
-        <h1>
+        <h1 data-i18n="hero.title">
           A free digital archive of Bauhaus books.
         </h1>
 
-        <p>
+        <p data-i18n="hero.subtitle">
           For designers, students and visual culture researchers around the world.
         </p>
 
         <div class="actions">
-          <button onclick="document.querySelector('#archive').scrollIntoView()">Enter archive</button>
-          <button>Compare covers</button>
+          <button data-scroll="#archive" data-i18n="hero.cta">Enter archive</button>
+          <button id="openCompare" data-i18n="hero.compare">Compare covers</button>
         </div>
       </section>
 
       <section id="archive">
-
         <div class="archive-layout">
-
           <aside class="filters">
-
             <div class="filters-top">
-              <h3>Filter by</h3>
-              <button id="clearFilters">Clear</button>
+              <h3 data-i18n="filters.title">Filter by</h3>
+              <button id="clearFilters" data-i18n="filters.clear">Clear</button>
             </div>
 
             <div class="search-row">
-              <label>Search</label>
-              <input type="search" placeholder="Title, author, topic..." />
+              <label for="searchInput" data-i18n="filters.search">Search</label>
+              <input id="searchInput" type="search" placeholder="Title, author, topic..." />
             </div>
 
-            <div class="filter-group">
-              <h3>Author</h3>
-
-              <div class="filter-options">
-                <button class="filter-chip">Paul Klee</button>
-                <button class="filter-chip">Kandinsky</button>
-                <button class="filter-chip">Moholy-Nagy</button>
-                <button class="filter-chip">Walter Gropius</button>
-              </div>
-            </div>
-
-            <div class="filter-group">
-              <h3>Year</h3>
-
-              <div class="filter-options">
-                <button class="filter-chip">1925</button>
-                <button class="filter-chip">1926</button>
-                <button class="filter-chip">1930</button>
-              </div>
-            </div>
-
-            <div class="filter-group">
-              <h3>Color</h3>
-
-              <div class="filter-options">
-                <button class="filter-chip">Black</button>
-                <button class="filter-chip">White</button>
-                <button class="filter-chip">Red</button>
-                <button class="filter-chip">Yellow</button>
-              </div>
-            </div>
-
+            <div id="filterGroups" class="filter-groups"></div>
           </aside>
 
           <div>
-
             <div class="archive-head">
-
               <div>
-                <div class="eyebrow">
+                <div class="eyebrow" data-i18n="archive.eyebrow">
                   DIGITAL COLLECTION
                 </div>
 
-                <h2>
+                <h2 data-i18n="archive.title">
                   Books
                 </h2>
               </div>
 
-              <div id="resultCount">
-                12 books
-              </div>
-
+              <div id="resultCount"></div>
             </div>
 
-            <div class="book-grid">
-
-              <button class="book-card">
-                <div>
-                  <div class="cover-placeholder">BK</div>
-
-                  <div>
-                    <h3>Bauhausbücher 1</h3>
-                    <div class="book-meta">Walter Gropius / 1925</div>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="tag">Modernism</span>
-                  <span class="tag">Typography</span>
-                </div>
-              </button>
-
-              <button class="book-card">
-                <div>
-                  <div class="cover-placeholder">KP</div>
-
-                  <div>
-                    <h3>Pädagogisches Skizzenbuch</h3>
-                    <div class="book-meta">Paul Klee / 1925</div>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="tag">Geometry</span>
-                  <span class="tag">Theory</span>
-                </div>
-              </button>
-
-              <button class="book-card">
-                <div>
-                  <div class="cover-placeholder">KN</div>
-
-                  <div>
-                    <h3>Punkt und Linie</h3>
-                    <div class="book-meta">Kandinsky / 1926</div>
-                  </div>
-                </div>
-
-                <div>
-                  <span class="tag">Abstraction</span>
-                  <span class="tag">Composition</span>
-                </div>
-              </button>
-
-            </div>
-
+            <div id="bookGrid" class="book-grid"></div>
           </div>
-
         </div>
-
       </section>
 
       <section id="about" class="about">
-
         <div>
-          <div class="eyebrow">
+          <div class="eyebrow" data-i18n="about.eyebrow">
             Context
           </div>
         </div>
 
         <div>
-          <h2>
+          <h2 data-i18n="about.title">
             Not a folder of PDFs. A living design archive.
           </h2>
 
-          <p>
+          <p data-i18n="about.text">
             Bauhaus Open Library is a prototype for an open, multilingual and visual archive dedicated to Bauhaus books and their influence on modern visual culture.
           </p>
         </div>
-
       </section>
-
     </main>
 
     <footer>
       Bauhaus Open Library — Prototype Archive.
     </footer>
-
   </div>
 
+  <dialog id="bookDialog" class="book-dialog">
+    <button class="close-dialog" data-close-dialog>×</button>
+    <div id="bookDetail" class="book-detail"></div>
+  </dialog>
+
+  <dialog id="readerDialog" class="reader-dialog">
+    <div class="reader-topbar">
+      <div>
+        <strong id="readerTitle"></strong><br />
+        <span id="readerMeta"></span>
+      </div>
+
+      <div class="reader-actions">
+        <button id="toggleReaderTheme" data-i18n="reader.theme">Theme</button>
+        <button id="fullscreenReader" data-i18n="reader.fullscreen">Fullscreen</button>
+        <button data-close-reader>×</button>
+      </div>
+    </div>
+
+    <iframe id="pdfFrame" title="PDF reader"></iframe>
+  </dialog>
+
+  <dialog id="compareDialog" class="compare-dialog">
+    <button class="close-dialog" data-close-compare>×</button>
+
+    <div class="compare-content">
+      <div class="compare-header">
+        <div class="eyebrow" data-i18n="compare.eyebrow">Visual study</div>
+        <h2 data-i18n="compare.title">Compare covers</h2>
+      </div>
+
+      <div class="compare-selectors">
+        <select id="compareA"></select>
+        <select id="compareB"></select>
+      </div>
+
+      <div id="compareView" class="compare-view"></div>
+    </div>
+  </dialog>
+
+  <script src="i18n.js?v=30"></script>
+  <script src="app.js?v=30"></script>
 </body>
 </html>
