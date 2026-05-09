@@ -4,14 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Bauhaus Open Library</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <style>
-
     :root{
       --bg:#000;
       --fg:#f5f5f5;
@@ -20,13 +15,9 @@
       --card:#0a0a0a;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -55,6 +46,13 @@
       padding:14px 18px;
       text-transform:uppercase;
       letter-spacing:.04em;
+    }
+
+    button:hover,
+    button.active,
+    .lang.active{
+      background:#fff;
+      color:#000;
     }
 
     .page{
@@ -94,11 +92,6 @@
       justify-content:flex-end;
       gap:10px;
       margin-top:10px;
-    }
-
-    .lang.active{
-      background:#fff;
-      color:#000;
     }
 
     .hero{
@@ -160,6 +153,7 @@
       border:1px solid #222;
       background:#080808;
       padding:24px;
+      z-index:5;
     }
 
     .filters-top{
@@ -167,6 +161,7 @@
       justify-content:space-between;
       align-items:center;
       margin-bottom:22px;
+      gap:14px;
     }
 
     .filters h3{
@@ -446,7 +441,6 @@
     }
 
     @media(max-width:1100px){
-
       .archive-layout,
       .about-grid,
       .detail-grid{
@@ -456,11 +450,9 @@
       .detail-info h2{
         max-width:100%;
       }
-
     }
 
     @media(max-width:760px){
-
       .page{
         padding:16px;
       }
@@ -478,8 +470,36 @@
         font-size:22vw;
       }
 
+      section{
+        padding:50px 0;
+      }
+
+      .archive-layout{
+        display:block;
+      }
+
+      .filters{
+        position:relative;
+        top:auto;
+        z-index:1;
+        margin-bottom:42px;
+      }
+
+      .archive-head{
+        display:block;
+        margin-top:0;
+      }
+
+      #resultCount{
+        display:block;
+        margin-top:14px;
+      }
+
       .book-grid{
         grid-template-columns:1fr;
+        position:relative;
+        z-index:2;
+        margin-top:40px;
       }
 
       .compare-grid{
@@ -498,8 +518,10 @@
         font-size:18vw;
       }
 
+      .filters-top{
+        align-items:flex-start;
+      }
     }
-
   </style>
 </head>
 
@@ -508,14 +530,12 @@
   <div class="page">
 
     <header>
-
       <a href="#" class="logo">
         BAUHAUS<br>
         OPEN LIBRARY
       </a>
 
       <div>
-
         <nav>
           <button data-scroll="#archive">Archive</button>
           <button data-scroll="#about">About</button>
@@ -526,15 +546,12 @@
           <button class="lang" data-lang="pt">PT-BR</button>
           <button class="lang" data-lang="es">ES</button>
         </div>
-
       </div>
-
     </header>
 
     <main>
 
       <section class="hero">
-
         <div class="eyebrow">
           BAUHAUSBÜCHER / 1925–1930
         </div>
@@ -556,7 +573,6 @@
             COMPARE COVERS
           </button>
         </div>
-
       </section>
 
       <section id="archive">
@@ -568,13 +584,12 @@
             <div class="filters-top">
               <h3 data-i18n="filters.title">FILTER BY</h3>
 
-              <button id="clearFilters">
+              <button id="clearFilters" data-i18n="filters.clear">
                 CLEAR
               </button>
             </div>
 
             <div>
-
               <label data-i18n="filters.search">
                 SEARCH
               </label>
@@ -584,7 +599,6 @@
                 type="search"
                 placeholder="Title, author, topic..."
               >
-
             </div>
 
             <div id="filterGroups"></div>
@@ -594,13 +608,12 @@
           <div>
 
             <div class="archive-head">
-
               <div>
-                <div class="eyebrow">
+                <div class="eyebrow" data-i18n="archive.eyebrow">
                   DIGITAL COLLECTION
                 </div>
 
-                <h2>
+                <h2 data-i18n="archive.title">
                   BOOKS
                 </h2>
               </div>
@@ -608,7 +621,6 @@
               <div id="resultCount">
                 0 books
               </div>
-
             </div>
 
             <div id="bookGrid" class="book-grid"></div>
@@ -623,12 +635,11 @@
 
         <div class="about-grid">
 
-          <div class="eyebrow" data-i18n="about.label">
+          <div class="eyebrow" data-i18n="about.eyebrow">
             ABOUT
           </div>
 
           <div class="about-text">
-
             <h2 data-i18n="about.title">
               BAUHAUS OPEN LIBRARY IS A LIVING DESIGN ARCHIVE.
             </h2>
@@ -636,7 +647,6 @@
             <p data-i18n="about.text">
               An open, multilingual and visual archive dedicated to the Bauhausbücher series and its influence on modern design culture.
             </p>
-
           </div>
 
         </div>
@@ -653,20 +663,16 @@
 
   <dialog id="bookDialog">
     <div class="dialog-inner">
-
       <button class="close" data-close-dialog>
         ×
       </button>
 
       <div id="bookDetail"></div>
-
     </div>
   </dialog>
 
   <dialog id="readerDialog">
-
     <div class="dialog-inner">
-
       <button class="close" data-close-reader>
         ×
       </button>
@@ -679,20 +685,16 @@
       ></div>
 
       <iframe id="pdfFrame"></iframe>
-
     </div>
-
   </dialog>
 
   <dialog id="compareDialog">
-
     <div class="dialog-inner">
-
       <button class="close" data-close-compare>
         ×
       </button>
 
-      <div class="eyebrow">
+      <div class="eyebrow" data-i18n="compare.eyebrow">
         VISUAL STUDY
       </div>
 
@@ -708,23 +710,19 @@
           margin-top:28px;
         "
       >
-
         <select id="compareA"></select>
         <select id="compareB"></select>
-
       </div>
 
       <div
         id="compareView"
         class="compare-grid"
       ></div>
-
     </div>
-
   </dialog>
 
-  <script src="./i18n.js"></script>
-  <script src="./app.js"></script>
+  <script src="./i18n.js?v=80"></script>
+  <script src="./app.js?v=80"></script>
 
 </body>
 </html>
