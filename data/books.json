@@ -260,7 +260,7 @@
     "colors": ["black","white"],
     "composition": ["editorial"],
     "typography": ["sans-serif"],
-    "cover": "covers/17-bauhaus-1928.jpg",
+    "cover": "covers/bauhaus_1928.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/bauhaus_1928.pdf",
     "description": {
       "en": "Bauhaus publication archive.",
