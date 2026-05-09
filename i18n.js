@@ -18,7 +18,7 @@ const I18N = {
       typography: "Typography",
       school: "School"
     },
-    archive: { eyebrow: "Digital collection", title: "Books", results: "items" },
+    archive: { eyebrow: "Digital collection", title: "Books", results: "books" },
     about: {
       eyebrow: "Context",
       title: "Not a folder of PDFs. A living design archive.",
@@ -47,7 +47,7 @@ const I18N = {
       typography: "Tipografia",
       school: "Escola"
     },
-    archive: { eyebrow: "Coleção digital", title: "Livros", results: "itens" },
+    archive: { eyebrow: "Coleção digital", title: "Livros", results: "livros" },
     about: {
       eyebrow: "Contexto",
       title: "Não é uma pasta de PDFs. É um arquivo vivo de design.",
@@ -76,7 +76,7 @@ const I18N = {
       typography: "Tipografía",
       school: "Escuela"
     },
-    archive: { eyebrow: "Colección digital", title: "Libros", results: "ítems" },
+    archive: { eyebrow: "Colección digital", title: "Libros", results: "libros" },
     about: {
       eyebrow: "Contexto",
       title: "No es una carpeta de PDFs. Es un archivo vivo de diseño.",
@@ -87,7 +87,3 @@ const I18N = {
     compare: { eyebrow: "Estudio visual", title: "Comparar portadas", author: "Autor", year: "Año", colors: "Colores", composition: "Composición", typography: "Tipografía", school: "Escuela" }
   }
 };
-
-function t(path) {
-  return path.split(".").reduce((obj, key) => obj?.[key], I18N[state.lang]) || path;
-}
