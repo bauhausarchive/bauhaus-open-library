@@ -7,14 +7,13 @@
 
   <style>
     :root {
-      --bg: #000000;
-      --ink: #ffffff;
+      --bg: #000;
+      --ink: #fff;
       --muted: #8a8a8a;
-      --line: #ffffff;
-      --red: #ff453a;
-      --blue: #4da3ff;
-      --yellow: #ffd60a;
-      --white: #111111;
+      --soft: #111;
+      --soft-2: #181818;
+      --line: #2b2b2b;
+      --line-strong: #fff;
     }
 
     * {
@@ -53,6 +52,7 @@
       text-transform: uppercase;
       letter-spacing: .05em;
       transition: .2s ease;
+      border-radius: 999px;
     }
 
     button:hover,
@@ -62,6 +62,9 @@
     }
 
     .page {
+      width: 100%;
+      max-width: 1680px;
+      margin: 0 auto;
       padding: 28px;
     }
 
@@ -69,17 +72,18 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      border-bottom: 1px solid var(--line);
+      gap: 24px;
+      border-bottom: 1px solid var(--line-strong);
       padding-bottom: 22px;
-      margin-bottom: 60px;
+      margin-bottom: 56px;
     }
 
     .logo {
-      font-size: 34px;
+      font-size: clamp(28px, 4vw, 44px);
       font-weight: 900;
-      line-height: .9;
+      line-height: .86;
       letter-spacing: -0.08em;
-      max-width: 240px;
+      text-transform: uppercase;
     }
 
     nav {
@@ -96,53 +100,59 @@
       justify-content: flex-end;
     }
 
+    .langs button {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+
     .hero {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 60px;
+      grid-template-columns: minmax(180px, .65fr) minmax(0, 2fr);
+      gap: clamp(28px, 5vw, 72px);
       align-items: end;
-      min-height: 65vh;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 60px;
+      min-height: 66vh;
+      border-bottom: 1px solid var(--line-strong);
+      padding-bottom: 64px;
     }
 
     .eyebrow {
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: .13em;
       color: var(--muted);
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(58px, 10vw, 160px);
-      line-height: .84;
-      letter-spacing: -0.09em;
+      font-size: clamp(58px, 10vw, 172px);
+      line-height: .82;
+      letter-spacing: -0.095em;
       margin: 0 0 28px;
-      max-width: 1200px;
+      max-width: 1250px;
       text-transform: uppercase;
     }
 
     h2 {
-      font-size: clamp(42px, 7vw, 100px);
-      line-height: .9;
-      letter-spacing: -0.08em;
+      font-size: clamp(42px, 7vw, 112px);
+      line-height: .88;
+      letter-spacing: -0.085em;
       margin: 0;
       text-transform: uppercase;
     }
 
     h3 {
-      font-size: 20px;
+      font-size: 18px;
       margin: 0 0 14px;
       text-transform: uppercase;
       letter-spacing: -.03em;
     }
 
     p {
-      font-size: 22px;
-      line-height: 1.4;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.38;
       color: #d0d0d0;
-      max-width: 780px;
+      max-width: 820px;
+      margin: 0;
     }
 
     .actions {
@@ -153,32 +163,63 @@
     }
 
     section {
-      padding: 60px 0;
-      border-bottom: 1px solid var(--line);
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line-strong);
     }
 
     .archive-layout {
       display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 50px;
+      grid-template-columns: minmax(260px, 330px) 1fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: start;
     }
 
     .filters {
       position: sticky;
       top: 24px;
       align-self: start;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 18px;
+    }
+
+    .filters-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .filters-top h3 {
+      margin: 0;
+    }
+
+    #clearFilters {
+      font-size: 11px;
+      padding: 7px 10px;
     }
 
     .search-row {
-      margin: 22px 0;
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 11px;
+      margin-bottom: 8px;
     }
 
     input {
       width: 100%;
       padding: 14px;
       border: 1px solid var(--line);
-      background: #111;
+      background: #050505;
       color: #fff;
+      border-radius: 0;
     }
 
     input::placeholder {
@@ -186,8 +227,9 @@
     }
 
     .filter-group {
-      border-top: 1px solid #333;
-      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 0;
+      margin-top: 18px;
     }
 
     .filter-options {
@@ -198,8 +240,9 @@
 
     .filter-chip {
       font-size: 11px;
-      padding: 6px 10px;
-      background: #111;
+      padding: 7px 10px;
+      background: #050505;
+      border-color: #444;
     }
 
     .archive-head {
@@ -213,6 +256,7 @@
     #resultCount {
       color: var(--muted);
       white-space: nowrap;
+      font-size: 14px;
     }
 
     .book-grid {
@@ -222,34 +266,35 @@
     }
 
     .book-card {
-      background: #0d0d0d;
-      border: 1px solid #222;
+      background: #0b0b0b;
+      border: 1px solid #242424;
+      color: var(--ink);
       padding: 16px;
-      min-height: 380px;
+      min-height: 386px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: .2s ease;
       text-align: left;
+      border-radius: 0;
     }
 
     .book-card:hover {
       transform: translateY(-4px);
       border-color: #fff;
       background: #161616;
+      color: #fff;
     }
 
-    .cover,
     .cover-placeholder {
       width: 100%;
       aspect-ratio: 3 / 4;
       background: #111;
       border: 1px solid #333;
-      object-fit: cover;
       display: grid;
       place-items: center;
       margin-bottom: 18px;
-      font-size: 58px;
+      font-size: clamp(46px, 7vw, 64px);
       font-weight: 900;
       letter-spacing: -.08em;
     }
@@ -279,8 +324,8 @@
 
     .about {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 50px;
+      grid-template-columns: minmax(180px, .65fr) minmax(0, 2fr);
+      gap: clamp(28px, 5vw, 72px);
     }
 
     footer {
@@ -289,107 +334,221 @@
       font-size: 14px;
     }
 
-    dialog {
-      width: min(1000px, calc(100vw - 32px));
-      border: 1px solid #333;
-      background: #000;
-      color: #fff;
-      padding: 24px;
+    @media (max-width: 1100px) {
+      .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      }
+
+      .archive-layout {
+        grid-template-columns: 280px 1fr;
+      }
+
+      h1 {
+        font-size: clamp(54px, 12vw, 128px);
+      }
     }
 
-    dialog::backdrop {
-      background: rgba(0,0,0,.8);
-    }
-
-    .dialog-top {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 20px;
-    }
-
-    .book-detail {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 40px;
-    }
-
-    .reader-dialog {
-      width: 100vw;
-      height: 100vh;
-      max-width: none;
-      max-height: none;
-      margin: 0;
-      padding: 16px;
-      background: #000;
-      color: #fff;
-    }
-
-    .reader-dialog.light {
-      background: #f2eee6;
-      color: #111;
-    }
-
-    .reader-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    iframe {
-      width: 100%;
-      height: calc(100vh - 100px);
-      border: 1px solid #333;
-      background: #fff;
-    }
-
-    .compare-controls {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 24px 0;
-    }
-
-    select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #333;
-      background: #111;
-      color: #fff;
-    }
-
-    .compare-view {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    @media (max-width: 900px) {
-      .hero,
-      .archive-layout,
-      .about,
-      .book-detail,
-      .compare-view {
-        grid-template-columns: 1fr;
+    @media (max-width: 860px) {
+      .page {
+        padding: 20px;
       }
 
       header {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 42px;
       }
 
       nav,
       .langs {
         justify-content: flex-start;
-        margin-top: 18px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-bottom: 48px;
+      }
+
+      h1 {
+        font-size: clamp(52px, 16vw, 92px);
+        line-height: .84;
+      }
+
+      h2 {
+        font-size: clamp(42px, 12vw, 74px);
+      }
+
+      .archive-layout {
+        grid-template-columns: 1fr;
       }
 
       .filters {
         position: static;
       }
 
+      .archive-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .book-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .book-card {
+        min-height: auto;
+        padding: 12px;
+      }
+
+      .book-card h3 {
+        font-size: 18px;
+      }
+
+      .book-meta {
+        font-size: 12px;
+      }
+
+      .tag {
+        font-size: 9px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 16px;
+      }
+
+      header {
+        padding-bottom: 18px;
+        margin-bottom: 34px;
+      }
+
+      .logo {
+        font-size: 31px;
+      }
+
+      nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+
+      nav button {
+        width: 100%;
+      }
+
+      .langs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+      }
+
+      .langs button {
+        width: 100%;
+      }
+
+      .hero {
+        padding-bottom: 42px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        margin-bottom: 16px;
+      }
+
       h1 {
-        font-size: 62px;
+        font-size: clamp(48px, 18vw, 76px);
+        letter-spacing: -0.095em;
+      }
+
+      p {
+        font-size: 17px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .actions button {
+        width: 100%;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+
+      .filters {
+        padding: 14px;
+      }
+
+      .filter-options {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .filter-chip {
+        flex: 0 0 auto;
+      }
+
+      .book-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .book-card {
+        display: grid;
+        grid-template-columns: 112px 1fr;
+        gap: 14px;
+        align-items: stretch;
+      }
+
+      .book-card > div:first-child {
+        display: grid;
+        grid-template-columns: 112px 1fr;
+        gap: 14px;
+      }
+
+      .cover-placeholder {
+        width: 112px;
+        height: 150px;
+        margin-bottom: 0;
+        font-size: 36px;
+      }
+
+      .book-card h3 {
+        font-size: 20px;
+      }
+
+      .book-card > div:last-child {
+        grid-column: 1 / -1;
+      }
+
+      footer {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 44px;
+      }
+
+      .book-card,
+      .book-card > div:first-child {
+        grid-template-columns: 92px 1fr;
+      }
+
+      .cover-placeholder {
+        width: 92px;
+        height: 124px;
+        font-size: 30px;
       }
     }
   </style>
@@ -452,9 +611,10 @@
 
           <aside class="filters">
 
-            <h3>Filter by</h3>
-
-            <button id="clearFilters">Clear</button>
+            <div class="filters-top">
+              <h3>Filter by</h3>
+              <button id="clearFilters">Clear</button>
+            </div>
 
             <div class="search-row">
               <label>Search</label>
@@ -524,19 +684,19 @@
               <button class="book-card">
 
                 <div>
-
                   <div class="cover-placeholder">
                     BK
                   </div>
 
-                  <h3>
-                    Bauhausbücher 1
-                  </h3>
+                  <div>
+                    <h3>
+                      Bauhausbücher 1
+                    </h3>
 
-                  <div class="book-meta">
-                    Walter Gropius / 1925
+                    <div class="book-meta">
+                      Walter Gropius / 1925
+                    </div>
                   </div>
-
                 </div>
 
                 <div>
@@ -549,19 +709,19 @@
               <button class="book-card">
 
                 <div>
-
                   <div class="cover-placeholder">
                     KP
                   </div>
 
-                  <h3>
-                    Pädagogisches Skizzenbuch
-                  </h3>
+                  <div>
+                    <h3>
+                      Pädagogisches Skizzenbuch
+                    </h3>
 
-                  <div class="book-meta">
-                    Paul Klee / 1925
+                    <div class="book-meta">
+                      Paul Klee / 1925
+                    </div>
                   </div>
-
                 </div>
 
                 <div>
@@ -574,19 +734,19 @@
               <button class="book-card">
 
                 <div>
-
                   <div class="cover-placeholder">
                     KN
                   </div>
 
-                  <h3>
-                    Punkt und Linie
-                  </h3>
+                  <div>
+                    <h3>
+                      Punkt und Linie
+                    </h3>
 
-                  <div class="book-meta">
-                    Kandinsky / 1926
+                    <div class="book-meta">
+                      Kandinsky / 1926
+                    </div>
                   </div>
-
                 </div>
 
                 <div>
