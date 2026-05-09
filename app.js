@@ -32,24 +32,35 @@ const els = {
   compareView: document.querySelector("#compareView")
 };
 
-init();
+document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
-  document.documentElement.dataset.lang = state.lang;
-  bindStaticEvents();
-  applyTranslations();
+  try {
+    document.documentElement.dataset.lang = state.lang;
+    bindStaticEvents();
+    applyTranslations();
 
-  const response = await fetch("data/books.json");
-  state.books = await response.json();
+    const response = await fetch(`data/books.json?v=${Date.now()}`);
+    if (!response.ok) throw new Error("Could not load data/books.json");
+    state.books = await response.json();
 
-  buildFilters();
-  renderBooks();
-  setupCompareSelectors();
+    buildFilters();
+    renderBooks();
+    setupCompareSelectors();
+  } catch (error) {
+    console.error(error);
+    if (els.bookGrid) {
+      els.bookGrid.innerHTML = `<p style="font-size:20px">Erro ao carregar o acervo. Verifique se o arquivo data/books.json está válido.</p>`;
+    }
+  }
 }
 
 function bindStaticEvents() {
   document.querySelectorAll("[data-scroll]").forEach(button => {
-    button.addEventListener("click", () => document.querySelector(button.dataset.scroll).scrollIntoView({ behavior: "smooth" }));
+    button.addEventListener("click", () => {
+      const target = document.querySelector(button.dataset.scroll);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    });
   });
 
   document.querySelectorAll(".lang").forEach(button => {
@@ -57,60 +68,88 @@ function bindStaticEvents() {
     button.addEventListener("click", () => {
       state.lang = button.dataset.lang;
       localStorage.setItem("bol-lang", state.lang);
+      document.documentElement.dataset.lang = state.lang;
       document.querySelectorAll(".lang").forEach(b => b.classList.toggle("active", b.dataset.lang === state.lang));
       applyTranslations();
+      buildFilters();
       renderBooks();
       renderCompare();
     });
   });
 
-  els.searchInput.addEventListener("input", event => {
-    state.search = event.target.value.trim().toLowerCase();
-    renderBooks();
+  if (els.searchInput) {
+    els.searchInput.addEventListener("input", event => {
+      state.search = event.target.value.trim().toLowerCase();
+      renderBooks();
+    });
+  }
+
+  if (els.clearFilters) {
+    els.clearFilters.addEventListener("click", () => {
+      filterKeys.forEach(key => state.filters[key].clear());
+      state.search = "";
+      if (els.searchInput) els.searchInput.value = "";
+      buildFilters();
+      renderBooks();
+    });
+  }
+
+  document.querySelectorAll("[data-close-dialog]").forEach(button => button.addEventListener("click", () => els.bookDialog?.close()));
+  document.querySelectorAll("[data-close-reader]").forEach(button => button.addEventListener("click", () => els.readerDialog?.close()));
+  document.querySelectorAll("[data-close-compare]").forEach(button => button.addEventListener("click", () => els.compareDialog?.close()));
+
+  const themeButton = document.querySelector("#toggleReaderTheme");
+  if (themeButton) themeButton.addEventListener("click", () => els.readerDialog?.classList.toggle("light"));
+
+  const fullscreenButton = document.querySelector("#fullscreenReader");
+  if (fullscreenButton) fullscreenButton.addEventListener("click", () => {
+    const node = els.readerDialog || document.documentElement;
+    node.requestFullscreen?.();
   });
 
-  els.clearFilters.addEventListener("click", () => {
-    filterKeys.forEach(key => state.filters[key].clear());
-    state.search = "";
-    els.searchInput.value = "";
-    buildFilters();
-    renderBooks();
-  });
-
-  document.querySelectorAll("[data-close-dialog]").forEach(button => button.addEventListener("click", () => els.bookDialog.close()));
-  document.querySelectorAll("[data-close-reader]").forEach(button => button.addEventListener("click", () => els.readerDialog.close()));
-  document.querySelectorAll("[data-close-compare]").forEach(button => button.addEventListener("click", () => els.compareDialog.close()));
-
-  document.querySelector("#toggleReaderTheme").addEventListener("click", () => els.readerDialog.classList.toggle("light"));
-  document.querySelector("#fullscreenReader").addEventListener("click", () => els.readerDialog.requestFullscreen?.());
-
-  document.querySelector("#openCompare").addEventListener("click", () => {
-    els.compareDialog.showModal();
+  const openCompare = document.querySelector("#openCompare");
+  if (openCompare) openCompare.addEventListener("click", () => {
+    els.compareDialog?.showModal();
     renderCompare();
   });
 
-  els.compareA.addEventListener("change", renderCompare);
-  els.compareB.addEventListener("change", renderCompare);
+  if (els.compareA) els.compareA.addEventListener("change", renderCompare);
+  if (els.compareB) els.compareB.addEventListener("change", renderCompare);
 }
 
 function applyTranslations() {
   document.querySelectorAll("[data-i18n]").forEach(node => {
-    node.textContent = t(node.dataset.i18n);
+    node.textContent = translate(node.dataset.i18n);
   });
-  els.searchInput.placeholder = state.lang === "pt" ? "Título, autor, tema..." : state.lang === "es" ? "Título, autor, tema..." : "Title, author, topic...";
+
+  if (els.searchInput) {
+    els.searchInput.placeholder =
+      state.lang === "pt" ? "Título, autor, tema..." :
+      state.lang === "es" ? "Título, autor, tema..." :
+      "Title, author, topic...";
+  }
+}
+
+function translate(path) {
+  if (typeof I18N === "undefined") return path;
+  return path.split(".").reduce((obj, key) => obj?.[key], I18N[state.lang]) || path;
 }
 
 function buildFilters() {
+  if (!els.filterGroups) return;
   els.filterGroups.innerHTML = "";
 
   filterKeys.forEach(key => {
     const values = uniqueValues(key);
+    if (!values.length) return;
+
     const group = document.createElement("div");
     group.className = "filter-group";
-    group.innerHTML = `<h3>${t(`filters.${key}`)}</h3><div class="filter-options"></div>`;
+    group.innerHTML = `<h3>${translate(`filters.${key}`)}</h3><div class="filter-options"></div>`;
 
     values.forEach(value => {
       const chip = document.createElement("button");
+      chip.type = "button";
       chip.className = "filter-chip";
       chip.textContent = value;
       chip.classList.toggle("active", state.filters[key].has(value));
@@ -127,8 +166,14 @@ function buildFilters() {
 }
 
 function uniqueValues(key) {
-  const values = state.books.flatMap(book => Array.isArray(book[key]) ? book[key] : [book[key]]);
-  return [...new Set(values.filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b)));
+  const values = state.books.flatMap(book => {
+    const value = book[key];
+    if (Array.isArray(value)) return value;
+    if (value) return [value];
+    return [];
+  });
+
+  return [...new Set(values)].sort((a, b) => String(a).localeCompare(String(b)));
 }
 
 function getFilteredBooks() {
@@ -156,12 +201,18 @@ function getFilteredBooks() {
 }
 
 function renderBooks() {
+  if (!els.bookGrid) return;
+
   const books = getFilteredBooks();
   els.bookGrid.innerHTML = "";
-  els.resultCount.textContent = `${books.length} ${t("archive.results")}`;
+
+  if (els.resultCount) {
+    els.resultCount.textContent = `${books.length} ${translate("archive.results")}`;
+  }
 
   books.forEach(book => {
     const card = document.createElement("button");
+    card.type = "button";
     card.className = "book-card";
     card.innerHTML = `
       <div class="cover-wrap">${coverMarkup(book)}</div>
@@ -178,7 +229,7 @@ function renderBooks() {
 
 function openBook(id) {
   const book = state.books.find(item => item.id === id);
-  if (!book) return;
+  if (!book || !els.bookDetail || !els.bookDialog) return;
 
   els.bookDetail.innerHTML = `
     <div class="detail-grid">
@@ -192,21 +243,24 @@ function openBook(id) {
         </div>
 
         <div class="detail-actions">
-          <button class="primary" data-read="${book.id}">${t("detail.read")}</button>
-          <button data-compare="${book.id}">${t("detail.compare")}</button>
+          <button class="primary" type="button" data-read="${book.id}">${translate("detail.read")}</button>
+          <button type="button" data-compare="${book.id}">${translate("detail.compare")}</button>
         </div>
 
-        <p class="eyebrow">${t("detail.context")}</p>
+        <p class="eyebrow">${translate("detail.context")}</p>
         <p class="detail-context">${book.context?.[state.lang] || book.context?.en || ""}</p>
       </div>
     </div>
   `;
 
-  els.bookDetail.querySelector("[data-read]").addEventListener("click", () => openReader(book.id));
-  els.bookDetail.querySelector("[data-compare]").addEventListener("click", () => {
+  const readButton = els.bookDetail.querySelector("[data-read]");
+  if (readButton) readButton.addEventListener("click", () => openReader(book.id));
+
+  const compareButton = els.bookDetail.querySelector("[data-compare]");
+  if (compareButton) compareButton.addEventListener("click", () => {
     els.bookDialog.close();
-    els.compareA.value = book.id;
-    els.compareDialog.showModal();
+    if (els.compareA) els.compareA.value = book.id;
+    els.compareDialog?.showModal();
     renderCompare();
   });
 
@@ -216,7 +270,12 @@ function openBook(id) {
 function openReader(id) {
   const book = state.books.find(item => item.id === id);
   if (!book?.pdf) {
-    alert(t("detail.pdfMissing"));
+    alert(translate("detail.pdfMissing"));
+    return;
+  }
+
+  if (!els.readerDialog || !els.pdfFrame) {
+    window.open(book.pdf, "_blank");
     return;
   }
 
@@ -227,17 +286,20 @@ function openReader(id) {
 }
 
 function setupCompareSelectors() {
-  [els.compareA, els.compareB].forEach(select => {
-    select.innerHTML = state.books.map(book => `<option value="${book.id}">${book.number}. ${book.title}</option>`).join("");
-  });
+  if (!els.compareA || !els.compareB) return;
+
+  const options = state.books.map(book => `<option value="${book.id}">${book.number}. ${book.title}</option>`).join("");
+  els.compareA.innerHTML = options;
+  els.compareB.innerHTML = options;
 
   if (state.books[1]) els.compareB.value = state.books[1].id;
 }
 
 function renderCompare() {
-  if (!state.books.length) return;
-  const a = state.books.find(book => book.id === els.compareA.value) || state.books[0];
-  const b = state.books.find(book => book.id === els.compareB.value) || state.books[1] || state.books[0];
+  if (!state.books.length || !els.compareView) return;
+
+  const a = state.books.find(book => book.id === els.compareA?.value) || state.books[0];
+  const b = state.books.find(book => book.id === els.compareB?.value) || state.books[1] || state.books[0];
 
   els.compareView.innerHTML = [a, b].map(book => `
     <article class="compare-card">
@@ -257,10 +319,12 @@ function renderCompare() {
 
 function compareRow(label, value) {
   const normalized = Array.isArray(value) ? value.join(", ") : value;
-  return `<div class="compare-row"><strong>${t(`compare.${label}`)}</strong><span>${normalized || "—"}</span></div>`;
+  return `<div class="compare-row"><strong>${translate(`compare.${label}`)}</strong><span>${normalized || "—"}</span></div>`;
 }
 
 function coverMarkup(book) {
-  if (!book.cover) return `<div class="cover-placeholder">${book.number || "B"}</div>`;
-  return `<img src="${book.cover}" alt="${book.title} cover" onerror="this.outerHTML='<div class=&quot;cover-placeholder&quot;>${book.number || "B"}</div>'">`;
+  const initials = (book.title || "B").split(" ").map(word => word[0]).join("").slice(0, 2).toUpperCase();
+  if (!book.cover) return `<div class="cover-placeholder">${initials}</div>`;
+
+  return `<img src="${book.cover}" alt="${book.title} cover" onerror="this.outerHTML='<div class=&quot;cover-placeholder&quot;>${initials}</div>'">`;
 }
