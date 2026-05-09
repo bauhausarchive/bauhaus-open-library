@@ -1,22 +1,38 @@
 [
   {
-    "id": "internationale-architektur",
+    "id": "bauhaus-architektur",
     "number": 1,
-    "title": "Internationale Architektur",
+    "title": "Bauhaus Architektur",
     "author": "Walter Gropius",
     "year": "1925",
     "colors": ["black", "white", "orange"],
     "composition": ["diagonal", "geometric"],
     "typography": ["sans-serif"],
     "school": ["architecture"],
-    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/INTERNATIONALE_ARCHITEKTUR.pdf",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/BAUHAUS_ARCHITEKTUR.pdf",
     "context": {
       "en": "A foundational Bauhaus architecture publication.",
       "pt": "Uma publicação fundamental da arquitetura Bauhaus.",
       "es": "Una publicación fundamental de la arquitectura Bauhaus."
     }
   },
-
+  {
+    "id": "internationale-architektur",
+    "number": 1,
+    "title": "Internationale Architektur",
+    "author": "Walter Gropius",
+    "year": "1925",
+    "colors": ["black", "white", "orange"],
+    "composition": ["diagonal", "geometric", "asymmetrical"],
+    "typography": ["sans-serif", "uppercase"],
+    "school": ["architecture", "modernism"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/INTERNATIONALE_ARCHITEKTUR.pdf",
+    "context": {
+      "en": "A key Bauhaus publication about modern architecture as an international language.",
+      "pt": "Uma publicação essencial da Bauhaus sobre arquitetura moderna como linguagem internacional.",
+      "es": "Una publicación clave de la Bauhaus sobre arquitectura moderna como lenguaje internacional."
+    }
+  },
   {
     "id": "paul-klee",
     "number": 2,
@@ -24,9 +40,9 @@
     "author": "Paul Klee",
     "year": "1925",
     "colors": ["black", "white"],
-    "composition": ["minimal"],
+    "composition": ["minimal", "symbolic"],
     "typography": ["geometric"],
-    "school": ["drawing"],
+    "school": ["drawing", "pedagogy"],
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/PAUL_KLEE.pdf",
     "context": {
       "en": "Paul Klee's visual pedagogy experiments.",
@@ -34,7 +50,57 @@
       "es": "Los experimentos de pedagogía visual de Paul Klee."
     }
   },
-
+  {
+    "id": "die-buehne",
+    "number": 4,
+    "title": "Die Bühne im Bauhaus",
+    "author": "Oskar Schlemmer",
+    "year": "1925",
+    "colors": ["black", "white", "gray"],
+    "composition": ["collage", "typographic"],
+    "typography": ["experimental", "uppercase"],
+    "school": ["theater", "performance"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/DIE_BUHNE.pdf",
+    "context": {
+      "en": "A Bauhaus exploration of stage, body, costume and movement.",
+      "pt": "Uma exploração Bauhaus sobre palco, corpo, figurino e movimento.",
+      "es": "Una exploración Bauhaus sobre escenario, cuerpo, vestuario y movimiento."
+    }
+  },
+  {
+    "id": "neue-arbeiten",
+    "number": 7,
+    "title": "Neue Arbeiten der Bauhauswerkstätten",
+    "author": "Walter Gropius",
+    "year": "1925",
+    "colors": ["black", "white", "blue"],
+    "composition": ["grid", "geometric"],
+    "typography": ["sans-serif", "uppercase"],
+    "school": ["workshops", "product design"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/NEUE_ARBEITEN.pdf",
+    "context": {
+      "en": "A record of Bauhaus workshop production and functional design.",
+      "pt": "Um registro da produção das oficinas Bauhaus e do design funcional.",
+      "es": "Un registro de la producción de los talleres Bauhaus y del diseño funcional."
+    }
+  },
+  {
+    "id": "moholy-nagy",
+    "number": 8,
+    "title": "Malerei Fotografie Film",
+    "author": "László Moholy-Nagy",
+    "year": "1925",
+    "colors": ["black", "white", "red"],
+    "composition": ["photographic", "diagonal"],
+    "typography": ["sans-serif", "bold"],
+    "school": ["photography", "film", "painting"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/MOHOLY_NAGY.pdf",
+    "context": {
+      "en": "A modern vision of photography, film and visual experimentation.",
+      "pt": "Uma visão moderna sobre fotografia, cinema e experimentação visual.",
+      "es": "Una visión moderna sobre fotografía, cine y experimentación visual."
+    }
+  },
   {
     "id": "kandinsky",
     "number": 9,
@@ -42,14 +108,82 @@
     "author": "Wassily Kandinsky",
     "year": "1926",
     "colors": ["black", "white", "blue"],
-    "composition": ["abstract"],
+    "composition": ["abstract", "geometric"],
     "typography": ["sans-serif"],
-    "school": ["theory"],
+    "school": ["theory", "composition"],
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/KANDINSKY.pdf",
     "context": {
       "en": "A theoretical study on point, line and plane.",
       "pt": "Um estudo teórico sobre ponto, linha e plano.",
       "es": "Un estudio teórico sobre punto, línea y plano."
+    }
+  },
+  {
+    "id": "hollandische-architektur",
+    "number": 10,
+    "title": "Holländische Architektur",
+    "author": "J.J.P. Oud",
+    "year": "1926",
+    "colors": ["black", "white", "yellow"],
+    "composition": ["photographic", "grid"],
+    "typography": ["sans-serif", "uppercase"],
+    "school": ["architecture", "modernism"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/HOLLANDISCHE_ARCHITEKTUR.pdf",
+    "context": {
+      "en": "A Bauhaus book dedicated to Dutch modern architecture.",
+      "pt": "Um livro Bauhaus dedicado à arquitetura moderna holandesa.",
+      "es": "Un libro Bauhaus dedicado a la arquitectura moderna neerlandesa."
+    }
+  },
+  {
+    "id": "gropius",
+    "number": 12,
+    "title": "Bauhausbauten Dessau",
+    "author": "Walter Gropius",
+    "year": "1930",
+    "colors": ["black", "white", "red"],
+    "composition": ["architectural", "technical"],
+    "typography": ["sans-serif", "modernist"],
+    "school": ["architecture", "dessau"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/GROPIUS.pdf",
+    "context": {
+      "en": "Documentation of the Bauhaus buildings in Dessau.",
+      "pt": "Documentação dos edifícios da Bauhaus em Dessau.",
+      "es": "Documentación de los edificios de la Bauhaus en Dessau."
+    }
+  },
+  {
+    "id": "kasimir-malewitsh",
+    "number": 11,
+    "title": "Kasimir Malewitsch",
+    "author": "Kasimir Malewitsch",
+    "year": "1927",
+    "colors": ["black", "white"],
+    "composition": ["abstract", "suprematist"],
+    "typography": ["sans-serif"],
+    "school": ["painting", "abstraction"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/KASEMIR_MALEWITSH.pdf",
+    "context": {
+      "en": "A Bauhaus publication connected to abstraction and Suprematist thought.",
+      "pt": "Uma publicação Bauhaus ligada à abstração e ao pensamento suprematista.",
+      "es": "Una publicación Bauhaus ligada a la abstracción y al pensamiento suprematista."
+    }
+  },
+  {
+    "id": "staatliches-bauhaus",
+    "number": 0,
+    "title": "Staatliches Bauhaus in Weimar 1919–1923",
+    "author": "Staatliches Bauhaus",
+    "year": "1923",
+    "colors": ["black", "red", "blue"],
+    "composition": ["typographic", "poster"],
+    "typography": ["uppercase", "bold"],
+    "school": ["bauhaus", "weimar"],
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/STAATLICHES_BAUHAUS.pdf",
+    "context": {
+      "en": "An early Bauhaus publication documenting the Weimar years.",
+      "pt": "Uma publicação inicial da Bauhaus documentando os anos de Weimar.",
+      "es": "Una publicación inicial de la Bauhaus que documenta los años de Weimar."
     }
   }
 ]
