@@ -1,191 +1,307 @@
 [
   {
-    "id": "internationale-architektur",
-    "number": 1,
+    "id": 1,
     "title": "Internationale Architektur",
     "author": "Walter Gropius",
-    "year": "1925",
-    "cover": "covers/01-internationale-architektur.jpg",
+    "year": 1925,
+    "school": "Bauhaus",
     "colors": ["black", "white", "orange"],
-    "composition": ["diagonal", "geometric", "asymmetrical"],
+    "composition": ["architectural", "minimal", "grid"],
     "typography": ["sans-serif", "uppercase"],
-    "school": ["architecture", "modernism"],
+    "cover": "covers/01-internationale-architektur.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/INTERNATIONALE_ARCHITEKTUR.pdf",
-    "context": {
-      "en": "A key Bauhaus publication about modern architecture as an international language.",
-      "pt": "Uma publicação essencial da Bauhaus sobre arquitetura moderna como linguagem internacional.",
-      "es": "Una publicación clave de la Bauhaus sobre arquitectura moderna como lenguaje internacional."
+    "description": {
+      "en": "A landmark publication documenting modern international architecture through the Bauhaus lens.",
+      "pt": "Uma publicação histórica sobre arquitetura moderna internacional sob a visão da Bauhaus.",
+      "es": "Una publicación histórica sobre arquitectura moderna internacional desde la visión Bauhaus."
     }
   },
 
   {
-    "id": "paul-klee",
-    "number": 2,
+    "id": 2,
     "title": "Pädagogisches Skizzenbuch",
     "author": "Paul Klee",
-    "year": "1925",
-    "cover": "covers/02-paul-klee.jpg",
+    "year": 1925,
+    "school": "Bauhaus",
     "colors": ["black", "white"],
-    "composition": ["minimal", "symbolic"],
-    "typography": ["geometric"],
-    "school": ["drawing", "pedagogy"],
+    "composition": ["minimal", "symbolic", "geometric"],
+    "typography": ["sans-serif", "uppercase"],
+    "cover": "covers/02-paul-klee.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/PAUL_KLEE.pdf",
-    "context": {
-      "en": "Paul Klee's visual pedagogy experiments.",
+    "description": {
+      "en": "Paul Klee’s visual experiments in pedagogy and abstraction.",
       "pt": "Os experimentos de pedagogia visual de Paul Klee.",
       "es": "Los experimentos de pedagogía visual de Paul Klee."
     }
   },
 
   {
-    "id": "die-buehne",
-    "number": 4,
+    "id": 3,
     "title": "Die Bühne im Bauhaus",
     "author": "Oskar Schlemmer",
-    "year": "1925",
-    "cover": "covers/04-die-buehne-im-bauhaus.jpg",
+    "year": 1925,
+    "school": "Bauhaus",
     "colors": ["black", "white", "gray"],
-    "composition": ["collage", "typographic"],
-    "typography": ["experimental", "uppercase"],
-    "school": ["theater", "performance"],
+    "composition": ["collage", "experimental"],
+    "typography": ["sans-serif", "uppercase"],
+    "cover": "covers/04-die-buehne-im-bauhaus.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/DIE_BUHNE.pdf",
-    "context": {
-      "en": "A Bauhaus exploration of stage, body, costume and movement.",
+    "description": {
+      "en": "A Bauhaus exploration of theater, body, costume and movement.",
       "pt": "Uma exploração Bauhaus sobre palco, corpo, figurino e movimento.",
       "es": "Una exploración Bauhaus sobre escenario, cuerpo, vestuario y movimiento."
     }
   },
 
   {
-    "id": "neue-arbeiten",
-    "number": 7,
+    "id": 4,
     "title": "Neue Arbeiten der Bauhauswerkstätten",
     "author": "Walter Gropius",
-    "year": "1925",
-    "cover": "covers/07-neue-arbeiten.jpg",
+    "year": 1925,
+    "school": "Bauhaus",
     "colors": ["black", "white", "blue"],
-    "composition": ["grid", "geometric"],
+    "composition": ["grid", "minimal"],
     "typography": ["sans-serif", "uppercase"],
-    "school": ["workshops", "product design"],
+    "cover": "covers/07-neue-arbeiten.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/NEUE_ARBEITEN.pdf",
-    "context": {
-      "en": "A record of Bauhaus workshop production and functional design.",
+    "description": {
+      "en": "A record of Bauhaus workshops and functional design production.",
       "pt": "Um registro da produção das oficinas Bauhaus e do design funcional.",
       "es": "Un registro de la producción de los talleres Bauhaus y del diseño funcional."
     }
   },
 
   {
-    "id": "moholy-nagy",
-    "number": 8,
+    "id": 5,
     "title": "Malerei Fotografie Film",
     "author": "László Moholy-Nagy",
-    "year": "1925",
+    "year": 1925,
+    "school": "Bauhaus",
+    "colors": ["black", "red", "white"],
+    "composition": ["photographic", "modernist"],
+    "typography": ["sans-serif", "uppercase"],
     "cover": "covers/08-malerei-fotografie-film.jpg",
-    "colors": ["black", "white", "red"],
-    "composition": ["photographic", "diagonal"],
-    "typography": ["sans-serif", "bold"],
-    "school": ["photography", "film", "painting"],
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/MOHOLY_NAGY.pdf",
-    "context": {
-      "en": "A modern vision of photography, film and visual experimentation.",
-      "pt": "Uma visão moderna sobre fotografia, cinema e experimentação visual.",
-      "es": "Una visión moderna sobre fotografía, cine y experimentación visual."
+    "description": {
+      "en": "Moholy-Nagy’s radical study of image, photography and film.",
+      "pt": "O estudo radical de Moholy-Nagy sobre imagem, fotografia e cinema.",
+      "es": "El estudio radical de Moholy-Nagy sobre imagen, fotografía y cine."
     }
   },
 
   {
-    "id": "kandinsky",
-    "number": 9,
+    "id": 6,
     "title": "Punkt und Linie zu Fläche",
     "author": "Wassily Kandinsky",
-    "year": "1926",
-    "cover": "covers/09-kandinsky.jpg",
+    "year": 1926,
+    "school": "Bauhaus",
     "colors": ["black", "white", "blue"],
-    "composition": ["abstract", "geometric"],
+    "composition": ["abstract", "minimal"],
     "typography": ["sans-serif"],
-    "school": ["theory", "composition"],
+    "cover": "covers/09-kandinsky.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/KANDINSKY.pdf",
-    "context": {
-      "en": "A theoretical study on point, line and plane.",
-      "pt": "Um estudo teórico sobre ponto, linha e plano.",
-      "es": "Un estudio teórico sobre punto, línea y plano."
+    "description": {
+      "en": "Kandinsky’s visual theory about points, lines and planes.",
+      "pt": "A teoria visual de Kandinsky sobre ponto, linha e plano.",
+      "es": "La teoría visual de Kandinsky sobre punto, línea y plano."
     }
   },
 
   {
-    "id": "hollandische-architektur",
-    "number": 10,
+    "id": 7,
     "title": "Holländische Architektur",
     "author": "J.J.P. Oud",
-    "year": "1926",
-    "cover": "covers/10-hollaendische-architektur.jpg",
-    "colors": ["black", "white", "yellow"],
-    "composition": ["photographic", "grid"],
+    "year": 1926,
+    "school": "De Stijl",
+    "colors": ["black", "yellow", "white"],
+    "composition": ["architectural", "grid"],
     "typography": ["sans-serif", "uppercase"],
-    "school": ["architecture", "modernism"],
+    "cover": "covers/10-hollaendische-architektur.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/HOLLANDISCHE_ARCHITEKTUR.pdf",
-    "context": {
-      "en": "A Bauhaus book dedicated to Dutch modern architecture.",
-      "pt": "Um livro Bauhaus dedicado à arquitetura moderna holandesa.",
-      "es": "Un libro Bauhaus dedicado a la arquitectura moderna neerlandesa."
+    "description": {
+      "en": "A study of Dutch modernist architecture and urban form.",
+      "pt": "Um estudo sobre arquitetura moderna holandesa e forma urbana.",
+      "es": "Un estudio sobre arquitectura moderna holandesa y forma urbana."
     }
   },
 
   {
-    "id": "kasimir-malewitsch",
-    "number": 11,
-    "title": "Kasimir Malewitsch",
-    "author": "Kasimir Malewitsch",
-    "year": "1927",
-    "cover": "covers/11-kasimir-malewitsch.jpg",
+    "id": 8,
+    "title": "Die Gegenstandslose Welt",
+    "author": "Kasimir Malevitsch",
+    "year": 1927,
+    "school": "Suprematism",
     "colors": ["black", "white"],
-    "composition": ["abstract", "suprematist"],
+    "composition": ["abstract", "minimal"],
     "typography": ["sans-serif"],
-    "school": ["painting", "abstraction"],
+    "cover": "covers/11-kasimir-malewitsch.jpg",
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/KASEMIR_MALEWITSH.pdf",
-    "context": {
-      "en": "A Bauhaus publication connected to abstraction and Suprematist thought.",
-      "pt": "Uma publicação Bauhaus ligada à abstração e ao pensamento suprematista.",
-      "es": "Una publicación Bauhaus ligada a la abstracción y al pensamiento suprematista."
+    "description": {
+      "en": "Malevich’s foundational manifesto on abstraction and Suprematism.",
+      "pt": "O manifesto fundamental de Malevich sobre abstração e suprematismo.",
+      "es": "El manifiesto fundamental de Malevich sobre abstracción y suprematismo."
     }
   },
 
   {
-    "id": "gropius",
-    "number": 12,
+    "id": 9,
     "title": "Bauhausbauten Dessau",
     "author": "Walter Gropius",
-    "year": "1930",
+    "year": 1930,
+    "school": "Bauhaus",
+    "colors": ["black", "red", "cream"],
+    "composition": ["architectural", "isometric"],
+    "typography": ["sans-serif"],
     "cover": "covers/12-bauhausbauten-dessau.jpg",
-    "colors": ["black", "white", "red"],
-    "composition": ["architectural", "technical"],
-    "typography": ["sans-serif", "modernist"],
-    "school": ["architecture", "dessau"],
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/GROPIUS.pdf",
-    "context": {
+    "description": {
       "en": "Documentation of the Bauhaus buildings in Dessau.",
       "pt": "Documentação dos edifícios da Bauhaus em Dessau.",
-      "es": "Documentación de los edificios de la Bauhaus en Dessau."
+      "es": "Documentación de los edificios Bauhaus en Dessau."
     }
   },
 
   {
-    "id": "staatliches-bauhaus",
-    "number": 0,
+    "id": 10,
     "title": "Staatliches Bauhaus in Weimar 1919–1923",
-    "author": "Staatliches Bauhaus",
-    "year": "1923",
+    "author": "Bauhaus",
+    "year": 1923,
+    "school": "Bauhaus",
+    "colors": ["red", "blue", "black"],
+    "composition": ["typographic", "poster-like"],
+    "typography": ["sans-serif", "uppercase"],
     "cover": "covers/00-staatliches-bauhaus.jpg",
-    "colors": ["black", "red", "blue"],
-    "composition": ["typographic", "poster"],
-    "typography": ["uppercase", "bold"],
-    "school": ["bauhaus", "weimar"],
     "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/STAATLICHES_BAUHAUS.pdf",
-    "context": {
-      "en": "An early Bauhaus publication documenting the Weimar years.",
-      "pt": "Uma publicação inicial da Bauhaus documentando os anos de Weimar.",
-      "es": "Una publicación inicial de la Bauhaus que documenta los años de Weimar."
+    "description": {
+      "en": "An overview of the Bauhaus school during its Weimar years.",
+      "pt": "Uma visão geral da Bauhaus durante os anos em Weimar.",
+      "es": "Una visión general de la Bauhaus durante los años en Weimar."
+    }
+  },
+
+  {
+    "id": 13,
+    "title": "Bauhaus 1-1",
+    "author": "Bauhaus",
+    "year": 1926,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["grid"],
+    "typography": ["sans-serif"],
+    "cover": "covers/13-bauhaus-1-1-1926.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/Bauhaus_1-1_1926.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
+    }
+  },
+
+  {
+    "id": 14,
+    "title": "Bauhaus 2-2-3",
+    "author": "Bauhaus",
+    "year": 1928,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["editorial"],
+    "typography": ["sans-serif"],
+    "cover": "covers/14-bauhaus-2-2-3-1928.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/Bauhaus_2-2_3_1928.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
+    }
+  },
+
+  {
+    "id": 15,
+    "title": "Bauhaus 3-4",
+    "author": "Bauhaus",
+    "year": 1929,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["modernist"],
+    "typography": ["sans-serif"],
+    "cover": "covers/15-bauhaus-3-4-1929.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/Bauhaus_3-4_1929.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
+    }
+  },
+
+  {
+    "id": 16,
+    "title": "Bauhaus 4-3",
+    "author": "Bauhaus",
+    "year": 1931,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["minimal"],
+    "typography": ["sans-serif"],
+    "cover": "covers/16-bauhaus-4-3-1931.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/Bauhaus_4-3_1931.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
+    }
+  },
+
+  {
+    "id": 17,
+    "title": "Bauhaus 1928",
+    "author": "Bauhaus",
+    "year": 1928,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["editorial"],
+    "typography": ["sans-serif"],
+    "cover": "covers/17-bauhaus-1928.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/bauhaus_1928.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
+    }
+  },
+
+  {
+    "id": 18,
+    "title": "Bauhaus 1929-1",
+    "author": "Bauhaus",
+    "year": 1929,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["grid"],
+    "typography": ["sans-serif"],
+    "cover": "covers/18-bauhaus-1929-1.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/BAUHAUS_1929-1.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
+    }
+  },
+
+  {
+    "id": 19,
+    "title": "Bauhaus 1929-2",
+    "author": "Bauhaus",
+    "year": 1929,
+    "school": "Bauhaus",
+    "colors": ["black","white"],
+    "composition": ["experimental"],
+    "typography": ["sans-serif"],
+    "cover": "covers/19-bauhaus-1929-2.jpg",
+    "pdf": "https://pub-c1168d6b4a14484ea9308d7f98ddb3b1.r2.dev/BAUHAUS_1929-2.pdf",
+    "description": {
+      "en": "Bauhaus publication archive.",
+      "pt": "Publicação histórica da Bauhaus.",
+      "es": "Publicación histórica de la Bauhaus."
     }
   }
 ]
