@@ -6,14 +6,16 @@ const I18N = {
     },
 
     hero: {
-      eyebrow: "BAUHAUSBÜCHER / 1925–1930",
       title: "A free digital archive of Bauhaus books.",
-      text: "For designers, students and visual culture researchers around the world.",
-      enter: "Enter archive",
+      subtitle: "For designers, students and visual culture researchers around the world.",
+      cta: "View books",
       compare: "Compare covers"
     },
 
     filters: {
+      title: "Filter by",
+      clear: "Clear",
+      search: "Search",
       author: "Author",
       year: "Year",
       colors: "Color",
@@ -36,6 +38,7 @@ const I18N = {
     },
 
     compare: {
+      eyebrow: "Visual Study",
       title: "Compare Covers",
       author: "Author",
       year: "Year",
@@ -54,19 +57,21 @@ const I18N = {
 
   pt: {
     nav: {
-      archive: "Arquivo",
+      archive: "Livros",
       about: "Sobre"
     },
 
     hero: {
-      eyebrow: "BAUHAUSBÜCHER / 1925–1930",
       title: "Um arquivo digital gratuito de livros da Bauhaus.",
-      text: "Para designers, estudantes e pesquisadores de cultura visual do mundo inteiro.",
-      enter: "Entrar no arquivo",
+      subtitle: "Para designers, estudantes e pesquisadores de cultura visual do mundo inteiro.",
+      cta: "Ver livros",
       compare: "Comparar capas"
     },
 
     filters: {
+      title: "Filtrar por",
+      clear: "Limpar",
+      search: "Buscar",
       author: "Autor",
       year: "Ano",
       colors: "Cor",
@@ -82,14 +87,15 @@ const I18N = {
     },
 
     detail: {
-      read: "Abrir Livro",
-      compare: "Comparar Capas",
+      read: "Abrir livro",
+      compare: "Comparar capas",
       context: "Contexto",
       pdfMissing: "PDF não disponível."
     },
 
     compare: {
-      title: "Comparar Capas",
+      eyebrow: "Estudo visual",
+      title: "Comparar capas",
       author: "Autor",
       year: "Ano",
       colors: "Cores",
@@ -107,19 +113,21 @@ const I18N = {
 
   es: {
     nav: {
-      archive: "Archivo",
+      archive: "Libros",
       about: "Sobre"
     },
 
     hero: {
-      eyebrow: "BAUHAUSBÜCHER / 1925–1930",
       title: "Un archivo digital gratuito de libros Bauhaus.",
-      text: "Para diseñadores, estudiantes e investigadores de cultura visual de todo el mundo.",
-      enter: "Entrar al archivo",
+      subtitle: "Para diseñadores, estudiantes e investigadores de cultura visual de todo el mundo.",
+      cta: "Ver libros",
       compare: "Comparar portadas"
     },
 
     filters: {
+      title: "Filtrar por",
+      clear: "Limpiar",
+      search: "Buscar",
       author: "Autor",
       year: "Año",
       colors: "Color",
@@ -135,14 +143,15 @@ const I18N = {
     },
 
     detail: {
-      read: "Abrir Libro",
-      compare: "Comparar Portadas",
+      read: "Abrir libro",
+      compare: "Comparar portadas",
       context: "Contexto",
       pdfMissing: "PDF no disponible."
     },
 
     compare: {
-      title: "Comparar Portadas",
+      eyebrow: "Estudio visual",
+      title: "Comparar portadas",
       author: "Autor",
       year: "Año",
       colors: "Colores",
