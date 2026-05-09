@@ -125,7 +125,10 @@ function bindStaticEvents() {
   });
 
   document.querySelectorAll("[data-close-reader]").forEach(button => {
-    button.addEventListener("click", () => els.readerDialog.close());
+    button.addEventListener("click", () => {
+      els.pdfFrame.src = "";
+      els.readerDialog.close();
+    });
   });
 
   document.querySelectorAll("[data-close-compare]").forEach(button => {
@@ -139,10 +142,6 @@ function bindStaticEvents() {
 
   els.compareA?.addEventListener("change", renderCompare);
   els.compareB?.addEventListener("change", renderCompare);
-
-  document.querySelector("#fullscreenReader")?.addEventListener("click", () => {
-    els.readerDialog.requestFullscreen?.();
-  });
 }
 
 function applyTranslations() {
@@ -351,11 +350,16 @@ function openBook(id) {
 
   els.bookDetail
     .querySelector("[data-read]")
-    ?.addEventListener("click", () => openReader(book.id));
+    ?.addEventListener("click", event => {
+      event.stopPropagation();
+      openReader(book.id);
+    });
 
   els.bookDetail
     .querySelector("[data-compare]")
-    ?.addEventListener("click", () => {
+    ?.addEventListener("click", event => {
+      event.stopPropagation();
+
       els.bookDialog.close();
 
       els.compareA.value = book.id;
@@ -378,7 +382,8 @@ function openReader(id) {
 
   els.readerTitle.textContent = book.title;
   els.readerMeta.textContent = `${book.author} — ${book.year}`;
-  els.pdfFrame.src = book.pdf;
+
+  els.pdfFrame.src = `${book.pdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
 
   els.readerDialog.showModal();
 }
@@ -469,7 +474,7 @@ function coverMarkup(book) {
     return `
       <div class="cover-wrap">
         <img
-          src="${book.cover}?v=2"
+          src="${book.cover}?v=3"
           alt="${book.title}"
           loading="lazy"
           onerror="this.parentElement.innerHTML='<div class=&quot;cover-placeholder&quot;>${initials}</div>'"
