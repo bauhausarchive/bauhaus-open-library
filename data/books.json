@@ -1,0 +1,272 @@
+[
+  {
+    "id": "internationale-architektur",
+    "number": 1,
+    "title": "Internationale Architektur",
+    "author": "Walter Gropius",
+    "year": "1925",
+    "colors": [
+      "black",
+      "white",
+      "orange"
+    ],
+    "composition": [
+      "diagonal",
+      "geometric",
+      "asymmetrical"
+    ],
+    "typography": [
+      "sans-serif",
+      "uppercase",
+      "spaced"
+    ],
+    "school": [
+      "architecture",
+      "modernism"
+    ],
+    "cover": "covers/01-internationale-architektur.jpg",
+    "pdf": "pdfs/01-internationale-architektur.pdf",
+    "context": {
+      "en": "A key Bauhaus publication that framed modern architecture as an international language based on function, clarity and new construction principles.",
+      "pt": "Uma publicação essencial da Bauhaus que apresentou a arquitetura moderna como uma linguagem internacional baseada em função, clareza e novos princípios construtivos.",
+      "es": "Una publicación clave de la Bauhaus que presentó la arquitectura moderna como un lenguaje internacional basado en función, claridad y nuevos principios constructivos."
+    }
+  },
+  {
+    "id": "paul-klee-pedagogisches-skizzenbuch",
+    "number": 2,
+    "title": "Pädagogisches Skizzenbuch",
+    "author": "Paul Klee",
+    "year": "1925",
+    "colors": [
+      "black",
+      "white"
+    ],
+    "composition": [
+      "vertical",
+      "symbolic",
+      "minimal"
+    ],
+    "typography": [
+      "sans-serif",
+      "uppercase",
+      "geometric"
+    ],
+    "school": [
+      "pedagogy",
+      "drawing",
+      "composition"
+    ],
+    "cover": "covers/02-paul-klee.jpg",
+    "pdf": "pdfs/02-paul-klee.pdf",
+    "context": {
+      "en": "Paul Klee’s pedagogical sketchbook condensed visual thinking into lessons about line, movement, structure and the foundations of composition.",
+      "pt": "O caderno pedagógico de Paul Klee condensou o pensamento visual em lições sobre linha, movimento, estrutura e fundamentos da composição.",
+      "es": "El cuaderno pedagógico de Paul Klee condensó el pensamiento visual en lecciones sobre línea, movimiento, estructura y fundamentos de la composición."
+    }
+  },
+  {
+    "id": "die-buehne-im-bauhaus",
+    "number": 4,
+    "title": "Die Bühne im Bauhaus",
+    "author": "Oskar Schlemmer",
+    "year": "1925",
+    "colors": [
+      "black",
+      "white",
+      "gray"
+    ],
+    "composition": [
+      "collage",
+      "typographic",
+      "figure"
+    ],
+    "typography": [
+      "condensed",
+      "uppercase",
+      "experimental"
+    ],
+    "school": [
+      "theater",
+      "performance",
+      "stage"
+    ],
+    "cover": "covers/04-die-buehne-im-bauhaus.jpg",
+    "pdf": "pdfs/04-die-buehne-im-bauhaus.pdf",
+    "context": {
+      "en": "This volume explored the Bauhaus stage as a laboratory for bodies, geometry, movement, costume and spatial experimentation.",
+      "pt": "Este volume explorou o palco da Bauhaus como laboratório para corpos, geometria, movimento, figurino e experimentação espacial.",
+      "es": "Este volumen exploró el escenario de la Bauhaus como laboratorio para cuerpos, geometría, movimiento, vestuario y experimentación espacial."
+    }
+  },
+  {
+    "id": "neue-arbeiten-der-bauhauswerkstaetten",
+    "number": 7,
+    "title": "Neue Arbeiten der Bauhauswerkstätten",
+    "author": "Walter Gropius",
+    "year": "1925",
+    "colors": [
+      "black",
+      "white",
+      "blue"
+    ],
+    "composition": [
+      "grid",
+      "geometric",
+      "asymmetrical"
+    ],
+    "typography": [
+      "sans-serif",
+      "uppercase",
+      "spaced"
+    ],
+    "school": [
+      "workshops",
+      "product design",
+      "craft"
+    ],
+    "cover": "covers/07-neue-arbeiten.jpg",
+    "pdf": "pdfs/07-neue-arbeiten.pdf",
+    "context": {
+      "en": "A record of Bauhaus workshop production, showing how craft, industrial design and functional objects became part of a modern design program.",
+      "pt": "Um registro da produção das oficinas Bauhaus, mostrando como artesanato, design industrial e objetos funcionais se tornaram parte de um programa moderno de design.",
+      "es": "Un registro de la producción de los talleres Bauhaus, mostrando cómo artesanía, diseño industrial y objetos funcionales se integraron a un programa moderno de diseño."
+    }
+  },
+  {
+    "id": "malerei-fotografie-film",
+    "number": 8,
+    "title": "Malerei Fotografie Film",
+    "author": "László Moholy-Nagy",
+    "year": "1925",
+    "colors": [
+      "black",
+      "white",
+      "red"
+    ],
+    "composition": [
+      "photographic",
+      "diagonal",
+      "experimental"
+    ],
+    "typography": [
+      "sans-serif",
+      "uppercase",
+      "bold"
+    ],
+    "school": [
+      "photography",
+      "film",
+      "painting"
+    ],
+    "cover": "covers/08-malerei-fotografie-film.jpg",
+    "pdf": "pdfs/08-malerei-fotografie-film.pdf",
+    "context": {
+      "en": "Moholy-Nagy positioned photography and film as central languages of modern vision, expanding the Bauhaus beyond traditional painting.",
+      "pt": "Moholy-Nagy posicionou fotografia e cinema como linguagens centrais da visão moderna, expandindo a Bauhaus para além da pintura tradicional.",
+      "es": "Moholy-Nagy posicionó la fotografía y el cine como lenguajes centrales de la visión moderna, expandiendo la Bauhaus más allá de la pintura tradicional."
+    }
+  },
+  {
+    "id": "punkt-und-linie-zu-flaeche",
+    "number": 9,
+    "title": "Punkt und Linie zu Fläche",
+    "author": "Wassily Kandinsky",
+    "year": "1926",
+    "colors": [
+      "black",
+      "white",
+      "blue"
+    ],
+    "composition": [
+      "minimal",
+      "geometric",
+      "abstract"
+    ],
+    "typography": [
+      "sans-serif",
+      "uppercase",
+      "geometric"
+    ],
+    "school": [
+      "abstraction",
+      "composition",
+      "theory"
+    ],
+    "cover": "covers/09-kandinsky.jpg",
+    "pdf": "pdfs/09-kandinsky.pdf",
+    "context": {
+      "en": "Kandinsky’s theoretical work investigated the expressive force of point, line and plane as the basic elements of visual composition.",
+      "pt": "A obra teórica de Kandinsky investigou a força expressiva do ponto, da linha e do plano como elementos básicos da composição visual.",
+      "es": "La obra teórica de Kandinsky investigó la fuerza expresiva del punto, la línea y el plano como elementos básicos de la composición visual."
+    }
+  },
+  {
+    "id": "hollaendische-architektur",
+    "number": 10,
+    "title": "Holländische Architektur",
+    "author": "J.J.P. Oud",
+    "year": "1926",
+    "colors": [
+      "black",
+      "white",
+      "yellow"
+    ],
+    "composition": [
+      "photographic",
+      "grid",
+      "rectangular"
+    ],
+    "typography": [
+      "sans-serif",
+      "uppercase",
+      "compact"
+    ],
+    "school": [
+      "architecture",
+      "netherlands",
+      "modernism"
+    ],
+    "cover": "covers/10-hollaendische-architektur.jpg",
+    "pdf": "pdfs/10-hollaendische-architektur.pdf",
+    "context": {
+      "en": "This volume introduced Dutch modern architecture through photography, typographic order and a clear editorial system.",
+      "pt": "Este volume apresentou a arquitetura moderna holandesa por meio de fotografia, ordem tipográfica e um sistema editorial claro.",
+      "es": "Este volumen presentó la arquitectura moderna neerlandesa mediante fotografía, orden tipográfico y un sistema editorial claro."
+    }
+  },
+  {
+    "id": "bauhausbauten-dessau",
+    "number": 12,
+    "title": "Bauhausbauten Dessau",
+    "author": "Walter Gropius",
+    "year": "1930",
+    "colors": [
+      "black",
+      "white",
+      "red"
+    ],
+    "composition": [
+      "architectural",
+      "diagonal",
+      "technical"
+    ],
+    "typography": [
+      "sans-serif",
+      "lowercase",
+      "modernist"
+    ],
+    "school": [
+      "architecture",
+      "dessau",
+      "modernism"
+    ],
+    "cover": "covers/12-bauhausbauten-dessau.jpg",
+    "pdf": "pdfs/12-bauhausbauten-dessau.pdf",
+    "context": {
+      "en": "A documentation of the Bauhaus buildings in Dessau, presenting architecture as a complete system of space, function and modern life.",
+      "pt": "Uma documentação dos edifícios da Bauhaus em Dessau, apresentando a arquitetura como um sistema completo de espaço, função e vida moderna.",
+      "es": "Una documentación de los edificios de la Bauhaus en Dessau, presentando la arquitectura como un sistema completo de espacio, función y vida moderna."
+    }
+  }
+]

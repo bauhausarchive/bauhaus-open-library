@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bauhaus Open Library</title>
+  <meta name="description" content="A free digital archive of Bauhaus books for designers, students and visual culture researchers." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Bauhaus Open Library">
+        <span>BAUHAUS</span>
+        <span>OPEN LIBRARY</span>
+      </a>
+
+      <nav class="nav-actions" aria-label="Main navigation">
+        <button class="nav-button" data-scroll="#archive" data-i18n="nav.archive">Archive</button>
+        <button class="nav-button" data-scroll="#about" data-i18n="nav.about">About</button>
+        <div class="language-switcher" aria-label="Language switcher">
+          <button class="lang active" data-lang="en">EN</button>
+          <button class="lang" data-lang="pt">PT-BR</button>
+          <button class="lang" data-lang="es">ES</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-kicker">BAUHAUSBÜCHER / 1925–1930</div>
+        <h1 data-i18n="hero.title">A free digital archive of Bauhaus books.</h1>
+        <p data-i18n="hero.subtitle">For designers, students and visual culture researchers around the world.</p>
+        <div class="hero-actions">
+          <button class="primary" data-scroll="#archive" data-i18n="hero.cta">Enter archive</button>
+          <button class="secondary" id="openCompare" data-i18n="hero.compare">Compare covers</button>
+        </div>
+      </section>
+
+      <section id="archive" class="archive-section">
+        <aside class="filters">
+          <div class="filters-header">
+            <h2 data-i18n="filters.title">Filter by</h2>
+            <button id="clearFilters" data-i18n="filters.clear">Clear</button>
+          </div>
+
+          <label class="search-label" for="searchInput" data-i18n="filters.search">Search</label>
+          <input id="searchInput" type="search" placeholder="Title, author, topic..." />
+
+          <div id="filterGroups" class="filter-groups"></div>
+        </aside>
+
+        <section class="library">
+          <div class="library-header">
+            <div>
+              <p class="eyebrow" data-i18n="archive.eyebrow">Digital collection</p>
+              <h2 data-i18n="archive.title">Books</h2>
+            </div>
+            <p id="resultCount" class="result-count"></p>
+          </div>
+
+          <div id="bookGrid" class="book-grid" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section id="about" class="about">
+        <p class="eyebrow" data-i18n="about.eyebrow">Context</p>
+        <h2 data-i18n="about.title">Not a folder of PDFs. A living design archive.</h2>
+        <p data-i18n="about.text">Bauhaus Open Library is a prototype for an open, multilingual and visual archive dedicated to the Bauhaus book series and its influence on modern design culture.</p>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="bookDialog" class="book-dialog">
+    <button class="close-dialog" data-close-dialog aria-label="Close">×</button>
+    <div id="bookDetail" class="book-detail"></div>
+  </dialog>
+
+  <dialog id="readerDialog" class="reader-dialog">
+    <div class="reader-topbar">
+      <div>
+        <strong id="readerTitle"></strong>
+        <span id="readerMeta"></span>
+      </div>
+      <div class="reader-actions">
+        <button id="toggleReaderTheme" data-i18n="reader.theme">Theme</button>
+        <button id="fullscreenReader" data-i18n="reader.fullscreen">Fullscreen</button>
+        <button data-close-reader aria-label="Close">×</button>
+      </div>
+    </div>
+    <iframe id="pdfFrame" title="PDF reader"></iframe>
+  </dialog>
+
+  <dialog id="compareDialog" class="compare-dialog">
+    <button class="close-dialog" data-close-compare aria-label="Close">×</button>
+    <div class="compare-content">
+      <div class="compare-header">
+        <p class="eyebrow" data-i18n="compare.eyebrow">Visual study</p>
+        <h2 data-i18n="compare.title">Compare covers</h2>
+      </div>
+
+      <div class="compare-selectors">
+        <select id="compareA"></select>
+        <select id="compareB"></select>
+      </div>
+
+      <div id="compareView" class="compare-view"></div>
+    </div>
+  </dialog>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
