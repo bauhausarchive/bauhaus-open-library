@@ -325,8 +325,16 @@ function openBook(id) {
 
 function openReader(id) {
   const book = state.books.find(item => String(item.id) === String(id));
+
   if (!book?.pdf) {
     alert(translate("detail.pdfMissing"));
+    return;
+  }
+
+  const isMobile = window.matchMedia("(max-width: 760px)").matches;
+
+  if (isMobile) {
+    window.open(book.pdf, "_blank");
     return;
   }
 
@@ -409,7 +417,7 @@ function coverMarkup(book) {
     return `
       <div class="cover-wrap">
         <img
-          src="${book.cover}?v=10"
+          src="${book.cover}?v=11"
           alt="${book.title}"
           loading="lazy"
           onerror="this.parentElement.innerHTML='<div class=&quot;cover-placeholder&quot;>${initials}</div>'"
